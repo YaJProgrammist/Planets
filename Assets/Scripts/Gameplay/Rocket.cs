@@ -35,8 +35,10 @@ namespace Gameplay
 
             //Vector2 shotForce = weight * acceleration * direction.normalized * 100;
             rocketRigidbody.velocity = acceleration * direction.normalized;
+            weaponWorkingPart.transform.rotation = Quaternion.FromToRotation(Vector2.up, direction.normalized);// .LookRotation(Vector2.forward);// .Euler(, 0, 0);
 
             //PARABOLIC MOVEMENT HAD TO BE HERE
+
             /*Sun sun = planetsListController.GetSun();
             Vector2 sunForce = sun.GetWeight() * weight * ;
             rocketRigidbody.AddForce(weight * acceleration * startVelocity.normalized);

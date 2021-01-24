@@ -6,7 +6,7 @@ namespace Gameplay
     public abstract class Weapon : MonoBehaviour
     {
         [SerializeField]
-        private WeaponWorkingPart weaponWorkingPart;
+        protected WeaponWorkingPart weaponWorkingPart;
 
         [SerializeField]
         private float damage;
