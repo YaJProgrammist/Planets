@@ -14,6 +14,12 @@ namespace Gameplay
                 Vector2 shotDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - this.transform.position).normalized;
                 planetShootController.MakeShot(shotDirection);
             }
+
+            if (Input.touchCount > 0)
+            {
+                Vector2 shotDirection = (Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position) - this.transform.position).normalized;
+                planetShootController.MakeShot(shotDirection);
+            }
         }
     }
 }

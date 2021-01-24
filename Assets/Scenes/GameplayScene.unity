@@ -1091,6 +1091,9 @@ MonoBehaviour:
   playerPlanetPrefab: {fileID: 4014766569377249369, guid: ba8e36d4cf6771b4d98e05dc7b9fbc42,
     type: 3}
   distanceBetweenOrbits: 1
+  planetWeight: 2
+  minAnglePerSecond: 10
+  maxAnglePerSecond: 45
 --- !u!4 &1487925042
 Transform:
   m_ObjectHideFlags: 0

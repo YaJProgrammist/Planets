@@ -17,6 +17,15 @@ namespace Gameplay
         [SerializeField]
         private float distanceBetweenOrbits;
 
+        [SerializeField]
+        private float planetWeight;
+
+        [SerializeField]
+        private float minAnglePerSecond;
+
+        [SerializeField]
+        private float maxAnglePerSecond;
+
         public Planet CreateEnemyPlanet(int planetPosition)
         {
             Planet planet = CreatePlanet(enemyPlanetPrefab, planetPosition);
@@ -36,9 +45,9 @@ namespace Gameplay
         private Planet CreatePlanet(Planet prefab, int planetPosition)
         {
             Planet planet = Instantiate(prefab);
-            float weight = 2; //TODO this all
+            float weight = planetWeight; 
             float initialAngle = Random.Range(0, 360);
-            float anglePerSecond = Random.Range(10, 45);
+            float anglePerSecond = Random.Range(minAnglePerSecond, maxAnglePerSecond);
             float distanceFromSun = (planetPosition + 1) * distanceBetweenOrbits;
             planet.Initialize(weight, initialAngle, anglePerSecond, distanceFromSun);
             return planet;

@@ -36,11 +36,12 @@ namespace Gameplay
             //Vector2 shotForce = weight * acceleration * direction.normalized * 100;
             rocketRigidbody.velocity = acceleration * direction.normalized;
 
-            Sun sun = planetsListController.GetSun();
-            //Vector2 sunForce = sun.GetWeight() * weight * ;
-            //rocketRigidbody.AddForce(weight * acceleration * startVelocity.normalized);
+            //PARABOLIC MOVEMENT HAD TO BE HERE
+            /*Sun sun = planetsListController.GetSun();
+            Vector2 sunForce = sun.GetWeight() * weight * ;
+            rocketRigidbody.AddForce(weight * acceleration * startVelocity.normalized);
 
-            /*foreach (Planet planet in planetsListController.GetPlanetsList())
+            foreach (Planet planet in planetsListController.GetPlanetsList())
             {
                 Vector2 distanceVector = planet.transform.position - this.transform.position;
                 Vector2 force = Vector2.one * weight * planet.GetWeight() / distanceVector;
