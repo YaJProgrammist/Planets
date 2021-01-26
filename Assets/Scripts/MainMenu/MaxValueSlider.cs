@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 namespace MainMenu
 {
+    /// <summary>
+    /// Makes maxValue slider value >= than minValue slider value
+    /// </summary>
     [RequireComponent(typeof(Slider))]
     public class MaxValueSlider : MonoBehaviour
     {

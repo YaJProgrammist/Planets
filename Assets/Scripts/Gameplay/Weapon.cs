@@ -3,15 +3,19 @@ using UnityEngine;
 
 namespace Gameplay
 {
+    /// <summary>
+    /// Object that can be activated with IShooter to hit some IHitterables
+    /// </summary>
     public abstract class Weapon : MonoBehaviour
     {
         [SerializeField]
         protected WeaponWorkingPart weaponWorkingPart;
 
+        /// <summary>
+        /// Damage that is done to hit object
+        /// </summary>
         [SerializeField]
         private float damage;
-
-        protected Collider2D weaponCollider;
 
         protected IShooter shooter;
 

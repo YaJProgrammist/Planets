@@ -3,13 +3,15 @@ using UnityEngine;
 
 namespace Gameplay
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class CooldownController : MonoBehaviour
     {
         [SerializeField]
         private int cooldownSec;
 
         private float currentCooldown;
-        private GameTimeController gameTimeController;
 
         public event EventHandler<OnCooldownChangedEventArgs> OnCooldownChanged;
 
@@ -17,8 +19,6 @@ namespace Gameplay
         {
             currentCooldown = 0;
             OnCooldownChanged?.Invoke(this, new OnCooldownChangedEventArgs((int)currentCooldown));
-
-            gameTimeController = ServiceLocator.GetInstance().GetGameTimeController();
         }
 
         private void Update()
@@ -29,16 +29,23 @@ namespace Gameplay
                 return;
             }
 
-            currentCooldown -= Time.fixedDeltaTime * gameTimeController.GetTimeScale();
+            currentCooldown -= Time.fixedDeltaTime * Time.timeScale;
             OnCooldownChanged?.Invoke(this, new OnCooldownChangedEventArgs((int)currentCooldown));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void RestartCooldownCounter()
         {
             currentCooldown = cooldownSec;
             OnCooldownChanged?.Invoke(this, new OnCooldownChangedEventArgs((int)currentCooldown));
         }
 
+        /// <summary>
+        /// True - 
+        /// </summary>
+        /// <returns></returns>
         public bool CooldownExpired()
         {
             return (currentCooldown == 0);

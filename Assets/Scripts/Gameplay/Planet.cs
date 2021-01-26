@@ -8,17 +8,25 @@ namespace Gameplay
         [SerializeField]
         private float weight;
 
+        /// <summary>
+        /// Initial angle of rotation around the sun
+        /// </summary>
         [SerializeField]
         private float initialAngle;
 
+        /// <summary>
+        /// Angle of rotation around the sun per second
+        /// </summary>
         [SerializeField]
         private float anglePerSecond;
 
+        /// <summary>
+        /// Radius of planet orbit (= distance from sun)
+        /// </summary>
         [SerializeField]
         private float orbitalRadius;
 
         private float health;
-        private IPlanetsListController planetsListController;
 
         public event EventHandler<OnHealthChangedEventArgs> OnHealthChanged;
         public event EventHandler OnShooterDestroy;
@@ -27,10 +35,15 @@ namespace Gameplay
         {
             health = 1;
             OnHealthChanged?.Invoke(this, new OnHealthChangedEventArgs(health));
-
-            planetsListController = ServiceLocator.GetInstance().GetPlanetsListController();
         }
 
+        /// <summary>
+        /// Set planet parameters. Required to make planet look properly
+        /// </summary>
+        /// <param name="weightVal"></param>
+        /// <param name="initialAngleVal"></param>
+        /// <param name="anglePerSecondVal"></param>
+        /// <param name="orbitalRadiusVal"></param>
         public void Initialize(float weightVal, float initialAngleVal, float anglePerSecondVal, float orbitalRadiusVal)
         {
             weight = weightVal;

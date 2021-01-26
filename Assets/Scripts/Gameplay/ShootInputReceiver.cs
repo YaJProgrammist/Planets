@@ -2,6 +2,9 @@
 
 namespace Gameplay
 {
+    /// <summary>
+    /// Recognizes player input that is meant to make player planet shoot
+    /// </summary>
     public class ShootInputReceiver : MonoBehaviour
     {
         [SerializeField]

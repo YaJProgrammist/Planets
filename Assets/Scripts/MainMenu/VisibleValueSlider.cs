@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 namespace MainMenu
 {
+    /// <summary>
+    /// Shows value of a slider on a handle of slider
+    /// </summary>
     [RequireComponent(typeof(Slider))]
     public class VisibleValueSlider : MonoBehaviour
     {

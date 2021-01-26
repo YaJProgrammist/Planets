@@ -2,6 +2,9 @@
 
 namespace Gameplay
 {
+    /// <summary>
+    /// Kind of weapon. Looks like rocket, has cooldown.
+    /// </summary>
     [RequireComponent(typeof(Rigidbody2D))]
     public class Rocket : Weapon
     {
@@ -11,6 +14,9 @@ namespace Gameplay
         [SerializeField]
         private float weight;
 
+        /// <summary>
+        /// Time passed since last shot with this rocket after which rocket dissappears
+        /// </summary>
         [SerializeField]
         private float lifetime;
 
@@ -19,8 +25,17 @@ namespace Gameplay
 
         private Rigidbody2D rocketRigidbody;
         private IPlanetsListController planetsListController;
+
+        /// <summary>
+        /// Time that passed since last shot with this rocket
+        /// </summary>
         private float currentLifetime;
 
+        /// <summary>
+        /// Shoots with rocket if cooldown is over
+        /// </summary>
+        /// <param name="startPosition"></param>
+        /// <param name="direction"></param>
         public override void TryActivate(Vector2 startPosition, Vector2 direction)
         {
             if (!cooldownController.CooldownExpired())

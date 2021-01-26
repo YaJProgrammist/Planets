@@ -2,6 +2,9 @@
 
 namespace Gameplay
 {
+    /// <summary>
+    /// Object that represents the center of planets system
+    /// </summary>
     public class Sun : MonoBehaviour, IHittable
     {
         [SerializeField]

@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Gameplay
 {
+    /// <summary>
+    /// Responsible for creating planets of different types
+    /// </summary>
     public class PlanetsFactory : MonoBehaviour
     {
         [SerializeField]

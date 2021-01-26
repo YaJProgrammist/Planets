@@ -2,16 +2,16 @@
 
 namespace Gameplay
 {
+    /// <summary>
+    /// Singleton service that provides access to other services that are meant to also be single
+    /// </summary>
     public class ServiceLocator : MonoBehaviour
     {
         [SerializeField]
         private PlanetsListController planetsListController;
 
         [SerializeField]
-        private WeaponsHolder weaponsHolder;
-
-        [SerializeField]
-        private GameTimeController gameTimeController;
+        private WeaponsGenerator weaponsGenerator;
 
         private static ServiceLocator instance;
 
@@ -37,14 +37,9 @@ namespace Gameplay
             return planetsListController;
         }
 
-        public GameTimeController GetGameTimeController()
+        public WeaponsGenerator GetWeaponsGenerator()
         {
-            return gameTimeController;
-        }
-
-        public WeaponsHolder GetWeaponsHolder()
-        {
-            return weaponsHolder;
+            return weaponsGenerator;
         }
     }
 }

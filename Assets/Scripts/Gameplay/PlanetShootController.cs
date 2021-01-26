@@ -20,7 +20,7 @@ namespace Gameplay
 
         private void Start()
         {
-            weaponPrefab = ServiceLocator.GetInstance().GetWeaponsHolder().GetRandomWeaponPrefab();
+            weaponPrefab = ServiceLocator.GetInstance().GetWeaponsGenerator().GetRandomWeaponPrefab();
 
             if (weaponPrefab != null)
             {

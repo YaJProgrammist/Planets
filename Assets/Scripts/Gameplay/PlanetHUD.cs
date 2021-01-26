@@ -8,6 +8,9 @@ namespace Gameplay
         [SerializeField]
         private Slider hpSlider;
 
+        /// <summary>
+        /// UI text field supposed to hold cooldown value
+        /// </summary>
         [SerializeField]
         private Text cooldownText;
 
@@ -23,6 +26,10 @@ namespace Gameplay
             planetShootController.OnNewWeaponSet += (s, ea) => SubscribeToWeaponCooldown(ea.Weapon);
         }
 
+        /// <summary>
+        /// Binds cooldownText value with actual value of weapon cooldown
+        /// </summary>
+        /// <param name="weapon"></param>
         private void SubscribeToWeaponCooldown(Weapon weapon)
         {
             CooldownController cooldownController = weapon.GetComponent<CooldownController>();

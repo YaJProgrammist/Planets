@@ -3,7 +3,10 @@ using UnityEngine;
 
 namespace Gameplay
 {
-    public class WeaponsHolder : MonoBehaviour
+    /// <summary>
+    /// Generates random weapons from prefabs
+    /// </summary>
+    public class WeaponsGenerator : MonoBehaviour
     {
         [SerializeField]
         private List<Weapon> weaponPrefabs;

@@ -1,12 +1,18 @@
 ﻿using UnityEngine;
 
-public class PlanetLookController : MonoBehaviour
-{
-    [SerializeField]
-    private SpriteRenderer planetSpriteRenderer;
-
-    public void SetSprite(Sprite sprite)
+namespace Gameplay
+{ 
+    /// <summary>
+    /// Responsible for planet appearance
+    /// </summary>
+    public class PlanetLookController : MonoBehaviour
     {
-        planetSpriteRenderer.sprite = sprite;
+        [SerializeField]
+        private SpriteRenderer planetSpriteRenderer;
+
+        public void SetSprite(Sprite sprite)
+        {
+            planetSpriteRenderer.sprite = sprite;
+        }
     }
 }

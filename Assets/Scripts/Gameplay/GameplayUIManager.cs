@@ -3,17 +3,32 @@ using UnityEngine;
 
 namespace Gameplay
 {
+    /// <summary>
+    /// Responsible for UI operations of GameplayScene
+    /// </summary>
     public class GameplayUIManager : MonoBehaviour
     {
+        /// <summary>
+        /// Panel to show during the game going on
+        /// </summary>
         [SerializeField]
         private RectTransform gameplayPanel;
 
+        /// <summary>
+        /// Panel to show while game is paused
+        /// </summary>
         [SerializeField]
         private RectTransform pausePanel;
 
+        /// <summary>
+        /// Panel that informs player about his failure
+        /// </summary>
         [SerializeField]
         private RectTransform gameOverPanel;
 
+        /// <summary>
+        /// Panel that informs player about his victory
+        /// </summary>
         [SerializeField]
         private RectTransform winPanel;
 
@@ -59,11 +74,13 @@ namespace Gameplay
 
         public void GameOver()
         {
+            gameplayPanel.gameObject.SetActive(false);
             gameOverPanel.gameObject.SetActive(true);
         }
 
         public void Win()
         {
+            gameplayPanel.gameObject.SetActive(false);
             winPanel.gameObject.SetActive(true);
         }
     }

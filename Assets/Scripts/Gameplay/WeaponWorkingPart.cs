@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Gameplay
 {
+    /// <summary>
+    /// Part of weapon that is shown and detects hits
+    /// </summary>
     [RequireComponent(typeof(Collider2D))]
     public class WeaponWorkingPart : MonoBehaviour
     {
